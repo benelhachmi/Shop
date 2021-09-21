@@ -14,57 +14,83 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `install react-router-dom`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install --save react-router-dom
 
-### `npm run build`
+### `install axios`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install axios
+Axios is based on Promise, which allows you to take advantage of the async benefits of JavaScript and await for more readable asynchronous code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `install redux`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install react-redux
+Redux is a predictable state container for JavaScript apps. It’s a « state container » because it holds all the state of your application. It doesn’t let you change that state directly, but instead forces you to describe changes as plain objects called « actions ». Actions can be recorded and replayed later, so this makes state management predictable. With the same actions in the same order, you’re going to end up in the same state.
 
-### `npm run eject`
+### `integrate semantic ui in index.html `
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Semantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `create component folder and file `
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `affiche data `
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://fakestoreapi.com/docs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `create  SET_PRODUCTS :"SET_PRODUCTS" in constan folder `
 
-### Code Splitting
+export const ActionTypes = {
+    SET_PRODUCTS :"SET_PRODUCTS",
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `create product reducer productReducers `
 
-### Analyzing the Bundle Size
+import { ActionTypes } from "../constants/actionTypes";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const initialState = {
+    products :[],
+}
 
-### Making a Progressive Web App
+export const productReducers = (state = initialState , {type,payload}) => {
+    switch(type){
+        case(ActionTypes.SET_PRODUCTS):
+            return {
+            ...state,
+            products :payload
+            }
+        default:
+            return state
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+        }
+    };
 
-### Advanced Configuration
+### `CREATE ACTION `
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+import { ActionTypes } from "../constants/actionTypes";
+export const setProducts = (products) => {
+    return {
+        type : ActionTypes.SET_PRODUCTS,
+        payload:products,
+    };
+}; 
 
-### Deployment
+### `use axios and useSelector and usedispatch to get data from url` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<img src="./public/image/set_data.png" alt="show all article"/>
 
-### `npm run build` fails to minify
+### `display data `
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./public/image/show.png" alt="show all article"/>
+
+### `show data on your website`
+ 
+ <img src="./public/image/show-si.png" alt="show all article"/>
+
+### `detail of product`
+
+ <img src="./public/image/detail.png" alt="show all article"/>
+
+ 
