@@ -1,10 +1,9 @@
-# Getting Started with Create React App
+ ### `home page`
+ <img src="./public/image/one.png" alt="show all article"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ### `product detail page`
+ <img src="./public/image/two.png" alt="show all article"/>
 
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 

@@ -16,3 +16,9 @@ export const removeSelectedProduct = () => {
       type: ActionTypes.REMOVE_SELECTED_PRODUCT,
     };
   };
+  export const add_product_to_card = product => {
+      return {
+          type :ActionTypes.ADD_TO_CARD,
+          payload : product
+      };
+  };

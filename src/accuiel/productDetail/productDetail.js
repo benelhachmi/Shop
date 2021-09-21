@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
-import { selectedProduct,removeSelectedProduct } from "../../redux/actions/productActions"
+import { selectedProduct,removeSelectedProduct,add_product_to_card } from "../../redux/actions/productActions"
 import { useSelector } from "react-redux";
 const ProductDetails = () => {
 
@@ -44,11 +44,15 @@ const ProductDetails = () => {
                 </h2>
                 <h3 className="ui brown block header">{category}</h3>
                 <p>{description}</p>
-                <div className="ui vertical animated button" tabIndex="0">
+                <div className="ui vertical animated button" tabIndex="0" 
+                onClick ={() => dispatch(add_product_to_card({...product}))}
+                >
                   <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
-                  <div className="visible content">Add to Cart</div>
+                  <div className="visible content"
+                  
+                  >Add to Cart</div>
                 </div>
               </div>
             </div>
